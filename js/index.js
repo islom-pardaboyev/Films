@@ -1,7 +1,8 @@
 "use strict";
-const elMainDiv = document.querySelector(".div");
-const elHeader = document.querySelector(".header");
+const elMainDiv = document.querySelector(".maindiv");
+const elHeader = document.querySelector("header");
 const elList = document.querySelector(".list");
+const elSelect = document.querySelector("#category");
 
 const newTitle = document.createElement("h1");
 const newInfo = document.createElement("p");
@@ -54,8 +55,8 @@ for (let data of films) {
 
 elHeader.append(newTitle, newInfo);
 
-
-elBtn.addEventListener("click", () => {
+document.querySelector('#filter-form').addEventListener("submit", (event) => {
+  event.preventDefault();
   const selectedGenre = elSelect.value;
   if (selectedGenre) {
     const filteredMovies = films.filter((movie) =>
