@@ -1,4 +1,4 @@
-"use strick";
+"use strict";
 const elMainDiv = document.querySelector(".div");
 const elHeader = document.querySelector(".header");
 const elList = document.querySelector(".list");
@@ -54,11 +54,6 @@ for (let data of films) {
 
 elHeader.append(newTitle, newInfo);
 
-const elForm = document.querySelector(".form");
-const elInput = document.querySelector(".input");
-
-const elSelect = document.querySelector(".genre-select");
-const elBtn = document.querySelector(".filter-btn");
 
 elBtn.addEventListener("click", () => {
   const selectedGenre = elSelect.value;
@@ -66,6 +61,7 @@ elBtn.addEventListener("click", () => {
     const filteredMovies = films.filter((movie) =>
       movie.genres.includes(selectedGenre)
     );
+    console.log(`🔎Searching... `);
     if (filteredMovies.length > 0) {
       filteredMovies.forEach((movie) => {
         console.log(movie.title);
