@@ -19,41 +19,11 @@ newInfo.setAttribute(
 newTitle.textContent = "Movies Catalog";
 newInfo.textContent = `Umumiy Kinolar soni: ${films.length}`;
 let filterFilms=[]
+
 for (let data of films) {
   filterFilms.push(data)
-  // const newLi = document.createElement("li");
-  // const newImg = document.createElement("img");
-  // const newDiv = document.createElement("div");
-  // const newTitle = document.createElement("p");
-  // const newBtn = document.createElement("button");
-  // newTitle.textContent = data.title;
-
-  // newDiv.append(newTitle);
-
-  // for (let genre of data.genres) {
-  //   const newLi2 = document.createElement("li");
-  //   newLi2.textContent = genre;
-
-  //   newLi2.setAttribute("class", "list-disc ml-[15px]");
-  //   newDiv.append(newLi2, newBtn);
-  // }
-
-  // newBtn.textContent = `Bookmark`;
-
-  // newImg.setAttribute("src", `${data.poster}`);
-  // newLi.setAttribute("class", "w-[305px] bg-[#fff] rounded-md");
-  // newDiv.setAttribute("class", "p-3");
-  // newBtn.setAttribute(
-  //   "class",
-  //   "bg-[#0C6DFD] mt-[10px] text-[#fff] p-2 rounded-md"
-  // );
-  // newTitle.setAttribute("class", "text-[20px] mb-[10px] font-medium");
-  // elList.setAttribute("class", "flex flex-wrap gap-[4rem]");
-
-  // elList.append(newLi);
-  // newLi.append(newImg, newDiv);
 }
-console.log(filterFilms);
+
 for (let data of filterFilms) {
   const newLi = document.createElement("li");
   const newImg = document.createElement("img");
@@ -97,17 +67,12 @@ document.querySelector("#filter-form").addEventListener("submit", (e) => {
     const filteredMovies = films.filter((movie) =>
       movie.genres.includes(selectedGenre)
     );
-    console.log(`🔎Searching... `);
     if (filteredMovies.length > 0) {
       filterFilms=[]
       elHeader.innerHTML=""
       filteredMovies.forEach((movie) => {
-        console.log(movie);
         filterFilms.push(movie)
-       
-     
       });
-      console.log(filterFilms);
       for (let data of filterFilms) {
         const newLi = document.createElement("li");
   const newImg = document.createElement("img");
