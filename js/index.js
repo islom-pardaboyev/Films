@@ -69,7 +69,8 @@ document.querySelector("#filter-form").addEventListener("submit", (e) => {
     );
     if (filteredMovies.length > 0) {
       filterFilms=[]
-      elHeader.innerHTML=""
+      elList.innerHTML = null
+      console.log(filteredMovies);
       filteredMovies.forEach((movie) => {
         filterFilms.push(movie)
       });
