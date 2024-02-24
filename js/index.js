@@ -4,7 +4,6 @@ const elHeader = document.querySelector("header");
 const elList = document.querySelector(".list");
 const elSelect = document.querySelector("#category");
 const elListBookmark = document.querySelector(".bookmark-list");
-console.log(elListBookmark);
 
 const newTitle = document.createElement("h1");
 const newInfo = document.createElement("p");
@@ -71,7 +70,12 @@ for (let data of filterFilms) {
     newPTitle.textContent = `Movie: ${data.title}`
     newBtnRemove.textContent = 'Remove'
 
-    console.log(newPTitle);
+    newLiDiv.setAttribute('class', 'bg-[white] mb-[10px] mr-[10px] rounded-md p-3 border w-[25rem]')
+    newBtnRemove.setAttribute('class', 'text-[1.2rem] p-2 bg-[red] rounded-md text-[white] mt-[10px]')
+    newPTitle.setAttribute('class', 'font-bold text-[1.2rem]')
+
+    elListBookmark.append(newLiDiv)
+    newLiDiv.append(newPTitle, newBtnRemove)
   })
 }
 elHeader.append(newTitle, newInfo);
@@ -86,7 +90,7 @@ document.querySelector("#filter-form").addEventListener("submit", (e) => {
     if (filteredMovies.length > 0) {
       filterFilms=[]
       elList.innerHTML = null
-      console.log(filteredMovies);
+
       filteredMovies.forEach((movie) => {
         filterFilms.push(movie)
       });
