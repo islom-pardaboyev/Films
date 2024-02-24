@@ -3,6 +3,8 @@ const elMainDiv = document.querySelector(".maindiv");
 const elHeader = document.querySelector("header");
 const elList = document.querySelector(".list");
 const elSelect = document.querySelector("#category");
+const elListBookmark = document.querySelector(".bookmark-list");
+console.log(elListBookmark);
 
 const newTitle = document.createElement("h1");
 const newInfo = document.createElement("p");
@@ -18,6 +20,7 @@ newInfo.setAttribute(
 
 newTitle.textContent = "Movies Catalog";
 newInfo.textContent = `Umumiy Kinolar soni: ${films.length}`;
+
 let filterFilms=[]
 
 for (let data of films) {
@@ -56,7 +59,20 @@ for (let data of filterFilms) {
 
   elList.append(newLi);
   newLi.append(newImg, newDiv);
-  
+    
+
+  newBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const newPTitle = document.createElement('p')
+    const newLiDiv = document.createElement('div')
+    const newBtnRemove = document.createElement('button');
+
+    newPTitle.textContent = `Movie: ${data.title}`
+    newBtnRemove.textContent = 'Remove'
+
+    console.log(newPTitle);
+  })
 }
 elHeader.append(newTitle, newInfo);
 
