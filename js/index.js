@@ -48,7 +48,7 @@ const filmElements = films.map(film => {
   newDiv.setAttribute("class", "p-3");
   newBtn.setAttribute(
     "class",
-    "bg-[#0C6DFD] mt-[10px] text-[#fff] p-2 rounded-md"
+    "bg-[#0C6DFD] mt-[10px] ml-[10px] mb-[10px] text-[#fff] p-2 rounded-md"
   );
   movieTitle.setAttribute("class", "text-[20px] mb-[10px] font-medium");
 
@@ -115,7 +115,7 @@ document.querySelector("#filter-form").addEventListener("submit", (e) => {
         newImg.setAttribute("src", data.poster);
         newLi.setAttribute("class", "w-[305px] bg-[#fff] rounded-md");
         newDiv.setAttribute("class", "p-3");
-        newBtn.setAttribute("class", "bg-[#0C6DFD] mt-[10px] text-[#fff] p-2 rounded-md");
+        newBtn.setAttribute("class", "bg-[#0C6DFD] ml-[10px] mb-[10px] mt-[10px] text-[#fff] p-2 rounded-md");
         newTitle.setAttribute("class", "text-[20px] mb-[10px] font-medium");
 
         elList.append(newLi);
