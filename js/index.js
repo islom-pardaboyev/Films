@@ -131,7 +131,5 @@ const filterSubmit = (e) => {
 
 document.querySelector("#filter-form").addEventListener("submit", filterSubmit);
 
-// Initial setup
 createTitleInfo();
 const filmElements = films.map(createMovieElement);
-
